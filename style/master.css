@@ -1,0 +1,86 @@
+body{
+  background-color: #1e1e1e;
+}
+.container{
+  color: white;
+}
+.block{
+  margin-top: 50px;
+}
+.Add-Item{
+  width: 100%;
+  border: none;
+  background-color: #515151;
+  color: white;
+  border-bottom-left-radius: 5px;
+  border-top-left-radius: 5px;
+  padding: 15px;
+  outline: 0;
+}
+.my-btn{
+  color: #ffffff;
+  border: #515151 2px solid;
+  border-left: none;
+}
+.my-btn:hover{
+  background-color: #dd794b;
+  color: #14202B;
+  border: #dd794b 2px solid;
+  border-left: none;
+}
+.del-btn-main{
+  border-bottom-left-radius: 0px;
+  border-top-left-radius: 0px;
+  border-bottom-right-radius: 3px;
+  border-top-right-radius: 3px;
+  border-left: none;
+}
+.cha-btn-main{
+  border-bottom-left-radius: 3px;
+  border-top-left-radius: 3px;
+  border-bottom-right-radius: 0px;
+  border-top-right-radius: 0px;
+  border-right: none;
+}
+.del-btn{
+  border-bottom-left-radius: 0px;
+  border-top-left-radius: 0px;
+  border-bottom-right-radius: 3px;
+  border-top-right-radius: 3px;
+  border-left: none;
+}
+.cha-btn{
+  border-bottom-left-radius: 3px;
+  border-top-left-radius: 3px;
+  border-bottom-right-radius: 0px;
+  border-top-right-radius: 0px;
+  border-right: none;
+}
+.task{
+  margin-top:50px;
+  border-radius: 7.5px;
+  border: #dd794b solid 2px;
+  transition: 1s;
+}
+.task:hover{
+  border-color: #915234;
+}
+.taskItem{
+  padding: 15px;
+  margin-top: -12px;
+  border-bottom: grey solid 2px;
+}
+.AddTask{
+  outline: 0;
+  margin-top: -8px;
+  background-color: #dd794b;
+  color: white;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  padding: 10px;
+  border: none;
+  transition: 1s;
+}
+.AddTask:focus{
+  background-color: #B5633E;
+}

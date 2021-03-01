@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="js/vue.js"></script>
+    <script defer src="js/main.js"></script>
+    <link rel="stylesheet" href="style/bootstrap.css">
+    <link rel="stylesheet" href="style/master.css">
+</head>
+<body>
+<div id="app">
+  <div v-show="error" class="alert alert-danger col-12 text-center">
+    <b>Поле не может быть пустым!</b>
+  </div>
+  <div class="container">
+    <div id="todo-list-example">
+      <form v-on:submit.prevent="add" class="col-12">
+        <div class="btn-group col-12 block">
+          <input  class="Add-Item"
+                  v-model="itemName"
+                  placeholder="Добавить задачу"
+                  maxlength="50">
+          <button class="btn my-btn">Добавить</button>
+        </div>
+      </form>
+      <form v-on:submit.prevent="search" class="col-12">
+        <div class="btn-group col-12 block">
+          <input  class="Add-Item"
+                  v-model="sear"
+                  placeholder="Найти задачу"
+                  maxlength="50">
+          <button class="btn my-btn">Найти</button>
+        </div>
+      </form>
+      <div v-for="(mas, index) in itemsList">
+        <div class="task">
+          <h3 class="taskItem text-center">
+            {{ mas.itemName[0] }}
+            <button id="del-btn" class="btn del-btn-main btn-outline-danger float-right" type="button" @click="remove_main(mas.itemName[1])">Delete</button>
+            <button class="btn cha-btn-main btn-outline-info float-right" type="button" @click="change_task_main(mas.itemName[1])">Change</button>
+            <form v-on:submit.prevent="change_field_main(mas.itemName[1])" v-if="mas.itemName[2] == true" class="float-right">
+              <input type="text" placeholder="Измените заметку" v-model="changeName">
+            </form>
+          </h3>
+          <div v-for="(mas2, index2) in items">
+            <h3 class="taskItem" v-if="mas2.taskName[1] == mas.itemName[1]">
+              <input type="checkbox" class="float-left">
+              {{ mas2.taskName[0] }}
+              <button class="btn del-btn btn-outline-danger float-right" type="button" v-if="mas2.taskName[1] == mas.itemName[1]" @click="remove(mas2.taskName[2])">Delete</button>
+              <button class="btn cha-btn btn-outline-info float-right" type="button" v-if="mas2.taskName[1] == mas.itemName[1]" @click="change_task(mas2.taskName[2])">Change</button>
+              <form v-on:submit.prevent="change_field(mas2.taskName[2])" v-if="mas2.taskName[3] == true" class="float-right">
+                <input type="text" placeholder="Измените заметку" v-model="changeName">
+              </form>
+            </h3>
+          </div>
+          <form v-on:submit.prevent="add2">
+            <input class="AddTask col-12" @click="hope = mas.itemName[1]" v-model="taskName" placeholder="Добавить задачу">
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>
